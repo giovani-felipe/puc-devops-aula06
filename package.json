@@ -4,7 +4,7 @@
   "description": "Api que executa as funcionalidades de uma calculadora",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon ./src/index.js",    
+    "start": "nodemon ./src/index.js",
     "test": "./node_modules/.bin/jest",
     "test:watch": "./node_modules/.bin/jest --watch",
     "test:coverage": "./node_modules/.bin/jest --coverage"
