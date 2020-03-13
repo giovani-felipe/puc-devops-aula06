@@ -1,0 +1,25 @@
+{
+  "name": "project-devops",
+  "version": "1.0.0",
+  "description": "Api que executa as funcionalidades de uma calculadora",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js",
+    "test": "npm test"
+  },
+  "keywords": [
+    "project",
+    "devops",
+    "calculadora",
+    "api"
+  ],
+  "author": "Bruno Augusto - Giovani Felipe",
+  "license": "ISC",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
