@@ -1,12 +1,42 @@
 const CalculadoraService = require('../../../src/service/calculadora-service');
 
-test('sum two number', () => {
-    let calculadora = new CalculadoraService();
+describe('Teste calculadora service', () => {
+    let res;
+    let sendSpy;
 
-    let valor1 = 1;
-    let valor2 = 2;
+    beforeAll(() => {});
 
-    let result = 3;
+    beforeEach(() => {
+        jest.clearAllMocks();
 
-    expect(calculadora.sum(valor1, valor2)).toBe(result);
-})
+        sendSpy = {
+            send: jest.fn()
+        };
+
+        res = {
+            status: jest.fn().mockReturnValue(sendSpy)
+        };
+    });
+
+    it('return 200 in method sum', () => {
+        const valor1 = 10;
+        const valor2 = 20;
+        const result = 30;
+
+        const calculadoraService = new CalculadoraService();
+        calculadoraService.sumNumber(valor1, valor2);
+
+        expect(calculadoraService.sumNumber(valor1, valor2)).toBe(result);
+    });
+
+    it('return 200 in method sub', () => {
+        const valor1 = 50;
+        const valor2 = 20;
+        const result = 30;
+
+        const calculadoraService = new CalculadoraService();
+        calculadoraService.subNumber(valor1, valor2);
+
+        expect(calculadoraService.subNumber(valor1, valor2)).toBe(result);
+    });
+});
