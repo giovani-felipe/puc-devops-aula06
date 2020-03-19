@@ -23,6 +23,15 @@
   },
   "devDependencies": {
     "jest": "^25.1.0",
+    "jest-sonar-reporter": "^2.0.0",
     "nodemon": "^2.0.2"
+  },
+  "jest": {
+    "testResultsProcessor": "jest-sonar-reporter"
+  },
+  "jestSonar": {
+    "reportPath": "coverage",
+    "reportFile": "test-reporter.xml",
+    "indent": 4
   }
 }

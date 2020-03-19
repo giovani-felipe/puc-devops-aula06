@@ -1,6 +1,7 @@
-const {defaults} = require('jest-config');
+const { defaults } = require('jest-config');
 
 module.exports = {
   verbose: true,
-  testEnvironment: 'node'
+  testEnvironment: 'node',
+  testResultsProcessor: 'jest-sonar-reporter'
 };
