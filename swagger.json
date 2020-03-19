@@ -1,0 +1,112 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "API Calculadora",
+        "version": "1.0.0",
+        "title": "API Calculadora"
+    },
+    "basePath": "/v1",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/calculadora/sum": {
+            "post": {
+                "tags": [
+                    "Adição"
+                ],
+                "summary": "Method Sum",
+                "description": "Method Sum",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Addition Operation",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/SumRequest"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful",
+                        "schema": {
+                            "$ref": "#/definitions/SumResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Falha no somatório"
+                    }
+                }
+            }
+        },
+
+        "/calculadora/sub": {
+            "post": {
+                "tags": [
+                    "Subtração"
+                ],
+                "summary": "Method Sub",
+                "description": "Method Sub",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Subtraction Operation",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/SubRequest"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful",
+                        "schema": {
+                            "$ref": "#/definitions/SubResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Falha na subtração"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "SumRequest": {
+            "type": "object",
+            "properties": {
+                "valor1": {
+                    "type": "number"
+                },
+                "valor2": {
+                    "type": "number"
+                }
+            }
+        },
+        "SumResponse": {
+            "type": "object",
+            "properties": {}
+        },
+        "SubRequest": {
+            "type": "object",
+            "properties": {
+                "valor1": {
+                    "type": "number"
+                },
+                "valor2": {
+                    "type": "number"
+                }
+            }
+        },
+        "SubResponse": {
+            "type": "object",
+            "properties": {}
+        }
+    }
+}
