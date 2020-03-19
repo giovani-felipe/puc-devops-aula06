@@ -1,7 +1,11 @@
 class CalculadoraService {
 
-    sum(valor1, valor2) {
+    sumNumber(valor1, valor2) {
         return valor1 + valor2;
+    }
+
+    subNumber(valor1, valor2) {
+        return valor1 - valor2;
     }
 }
 
