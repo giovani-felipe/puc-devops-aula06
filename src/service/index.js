@@ -1,3 +1,3 @@
-const Calculadora = require("./calculadora")
+const CalculadoraService = require("./calculadora-service")
 
-module.exports = {Calculadora}
+module.exports = { CalculadoraService }

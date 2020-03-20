@@ -1,0 +1,211 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "API Calculadora",
+        "version": "1.0.0",
+        "title": "API Calculadora"
+    },
+    "basePath": "/api/v1",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/calculadora/addition": {
+            "post": {
+                "tags": [
+                    "Adição"
+                ],
+                "summary": "Method addition",
+                "description": "Method addition",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Addition Operation",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/AddRequest"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful",
+                        "schema": {
+                            "$ref": "#/definitions/AddResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Falha no somatório"
+                    }
+                }
+            }
+        },
+
+        "/calculadora/subtraction": {
+            "post": {
+                "tags": [
+                    "Subtração"
+                ],
+                "summary": "Method subtraction",
+                "description": "Method subtraction",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Subtraction Operation",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/SubRequest"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful",
+                        "schema": {
+                            "$ref": "#/definitions/SubResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Falha na subtração"
+                    }
+                }
+            }
+        },
+
+        "/calculadora/multiplication": {
+            "post": {
+                "tags": [
+                    "Multiplicação"
+                ],
+                "summary": "Method multiplication",
+                "description": "Method multiplication",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Multiplication Operation",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/MultRequest"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful",
+                        "schema": {
+                            "$ref": "#/definitions/MultResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Falha na divisão"
+                    }
+                }
+            }
+        },
+
+        "/calculadora/division": {
+            "post": {
+                "tags": [
+                    "Divisão"
+                ],
+                "summary": "Method division",
+                "description": "Method division",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Division Operation",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/DivRequest"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful",
+                        "schema": {
+                            "$ref": "#/definitions/DivResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Falha na divisão"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "AddRequest": {
+            "type": "object",
+            "properties": {
+                "valor1": {
+                    "type": "number"
+                },
+                "valor2": {
+                    "type": "number"
+                }
+            }
+        },
+        "AddResponse": {
+            "type": "object",
+            "properties": {}
+        },
+
+        "SubRequest": {
+            "type": "object",
+            "properties": {
+                "valor1": {
+                    "type": "number"
+                },
+                "valor2": {
+                    "type": "number"
+                }
+            }
+        },
+        "SubResponse": {
+            "type": "object",
+            "properties": {}
+        },
+
+        "MultRequest": {
+            "type": "object",
+            "properties": {
+                "valor1": {
+                    "type": "number"
+                },
+                "valor2": {
+                    "type": "number"
+                }
+            }
+        },
+        "MultResponse": {
+            "type": "object",
+            "properties": {}
+        },
+
+        "DivRequest": {
+            "type": "object",
+            "properties": {
+                "valor1": {
+                    "type": "number"
+                },
+                "valor2": {
+                    "type": "number"
+                }
+            }
+        },
+        "DivResponse": {
+            "type": "object",
+            "properties": {}
+        }
+    }
+}
