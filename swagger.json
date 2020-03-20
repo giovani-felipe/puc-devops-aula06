@@ -11,13 +11,13 @@
         "https"
     ],
     "paths": {
-        "/calculadora/sum": {
+        "/calculadora/addition": {
             "post": {
                 "tags": [
                     "Adição"
                 ],
-                "summary": "Method Sum",
-                "description": "Method Sum",
+                "summary": "Method addition",
+                "description": "Method addition",
                 "produces": [
                     "application/json"
                 ],
@@ -27,14 +27,14 @@
                     "description": "Addition Operation",
                     "required": true,
                     "schema": {
-                        "$ref": "#/definitions/SumRequest"
+                        "$ref": "#/definitions/AddRequest"
                     }
                 }],
                 "responses": {
                     "200": {
                         "description": "successful",
                         "schema": {
-                            "$ref": "#/definitions/SumResponse"
+                            "$ref": "#/definitions/AddResponse"
                         }
                     },
                     "404": {
@@ -44,13 +44,13 @@
             }
         },
 
-        "/calculadora/sub": {
+        "/calculadora/subtraction": {
             "post": {
                 "tags": [
                     "Subtração"
                 ],
-                "summary": "Method Sub",
-                "description": "Method Sub",
+                "summary": "Method subtraction",
+                "description": "Method subtraction",
                 "produces": [
                     "application/json"
                 ],
@@ -75,42 +75,76 @@
                     }
                 }
             }
-        }
-    },
-    "/calculadora/division": {
-        "post": {
-            "tags": [
-                "Divisão"
-            ],
-            "summary": "Method division",
-            "description": "Method division",
-            "produces": [
-                "application/json"
-            ],
-            "parameters": [{
-                "in": "body",
-                "name": "body",
-                "description": "Division Operation",
-                "required": true,
-                "schema": {
-                    "$ref": "#/definitions/DivRequest"
-                }
-            }],
-            "responses": {
-                "200": {
-                    "description": "successful",
+        },
+
+        "/calculadora/multiplication": {
+            "post": {
+                "tags": [
+                    "Multiplicação"
+                ],
+                "summary": "Method multiplication",
+                "description": "Method multiplication",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Multiplication Operation",
+                    "required": true,
                     "schema": {
-                        "$ref": "#/definitions/DivResponse"
+                        "$ref": "#/definitions/MultRequest"
                     }
-                },
-                "404": {
-                    "description": "Falha na divisão"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful",
+                        "schema": {
+                            "$ref": "#/definitions/MultResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Falha na divisão"
+                    }
+                }
+            }
+        },
+
+        "/calculadora/division": {
+            "post": {
+                "tags": [
+                    "Divisão"
+                ],
+                "summary": "Method division",
+                "description": "Method division",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Division Operation",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/DivRequest"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful",
+                        "schema": {
+                            "$ref": "#/definitions/DivResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Falha na divisão"
+                    }
                 }
             }
         }
     },
     "definitions": {
-        "SumRequest": {
+        "AddRequest": {
             "type": "object",
             "properties": {
                 "valor1": {
@@ -121,10 +155,11 @@
                 }
             }
         },
-        "SumResponse": {
+        "AddResponse": {
             "type": "object",
             "properties": {}
         },
+
         "SubRequest": {
             "type": "object",
             "properties": {
@@ -140,6 +175,23 @@
             "type": "object",
             "properties": {}
         },
+
+        "MultRequest": {
+            "type": "object",
+            "properties": {
+                "valor1": {
+                    "type": "number"
+                },
+                "valor2": {
+                    "type": "number"
+                }
+            }
+        },
+        "MultResponse": {
+            "type": "object",
+            "properties": {}
+        },
+
         "DivRequest": {
             "type": "object",
             "properties": {

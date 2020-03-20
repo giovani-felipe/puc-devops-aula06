@@ -24,9 +24,9 @@ describe('Teste calculadora service', () => {
         const result = 30;
 
         const calculadoraService = new CalculadoraService();
-        calculadoraService.sumNumber(valor1, valor2);
+        calculadoraService.additionNumber(valor1, valor2);
 
-        expect(calculadoraService.sumNumber(valor1, valor2)).toBe(result);
+        expect(calculadoraService.additionNumber(valor1, valor2)).toBe(result);
     });
 
     it('return 200 in method sub', () => {
@@ -35,9 +35,9 @@ describe('Teste calculadora service', () => {
         const result = 30;
 
         const calculadoraService = new CalculadoraService();
-        calculadoraService.subNumber(valor1, valor2);
+        calculadoraService.subtractionNumber(valor1, valor2);
 
-        expect(calculadoraService.subNumber(valor1, valor2)).toBe(result);
+        expect(calculadoraService.subtractionNumber(valor1, valor2)).toBe(result);
     });
 
     it('return 200 in method mult', () => {
@@ -46,9 +46,9 @@ describe('Teste calculadora service', () => {
         const result = 100;
 
         const calculadoraService = new CalculadoraService();
-        calculadoraService.multNumber(valor1, valor2);
+        calculadoraService.multiplicationNumber(valor1, valor2);
 
-        expect(calculadoraService.multNumber(valor1, valor2)).toBe(result);
+        expect(calculadoraService.multiplicationNumber(valor1, valor2)).toBe(result);
     });
 
     it('return 200 in method divisionNumber', () => {

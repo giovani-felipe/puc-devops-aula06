@@ -18,7 +18,7 @@ describe('Teste calculadora controller', () => {
         };
     });
 
-    it('return 200 in method sum', async() => {
+    it('return 200 in method additionNumber', async() => {
         const valor1 = 10;
         const valor2 = 20;
         const result = 30;
@@ -28,17 +28,17 @@ describe('Teste calculadora controller', () => {
         };
 
         const calculadoraService = {
-            sumNumber: jest.fn().mockReturnValue(30)
+            additionNumber: jest.fn().mockReturnValue(30)
         }
 
         const calculadoraController = new CalculadoraController();
-        calculadoraController.sumNumber(req, res);
+        calculadoraController.additionNumber(req, res);
 
-        expect(calculadoraService.sumNumber(valor1, valor2)).toBe(result);
+        expect(calculadoraService.additionNumber(valor1, valor2)).toBe(result);
         expect(res.status).toHaveBeenCalledWith(200);
     });
 
-    it('return 200 in method sub', async() => {
+    it('return 200 in method subtractionNumber', async() => {
         const valor1 = 40;
         const valor2 = 10;
         const result = 30;
@@ -48,17 +48,17 @@ describe('Teste calculadora controller', () => {
         };
 
         const calculadoraService = {
-            subNumber: jest.fn().mockReturnValue(30)
+            subtractionNumber: jest.fn().mockReturnValue(30)
         }
 
         const calculadoraController = new CalculadoraController();
-        calculadoraController.subNumber(req, res);
+        calculadoraController.subtractionNumber(req, res);
 
-        expect(calculadoraService.subNumber(valor1, valor2)).toBe(result);
+        expect(calculadoraService.subtractionNumber(valor1, valor2)).toBe(result);
         expect(res.status).toHaveBeenCalledWith(200);
     });
 
-    it('return 200 in method mult', async() => {
+    it('return 200 in method multiplicationNumber', async() => {
         const valor1 = 10;
         const valor2 = 10;
         const result = 100;
@@ -68,13 +68,13 @@ describe('Teste calculadora controller', () => {
         };
 
         const calculadoraService = {
-            multNumber: jest.fn().mockReturnValue(100)
+            multiplicationNumber: jest.fn().mockReturnValue(100)
         }
 
         const calculadoraController = new CalculadoraController();
-        calculadoraController.multNumber(req, res);
+        calculadoraController.multiplicationNumber(req, res);
 
-        expect(calculadoraService.multNumber(valor1, valor2)).toBe(result);
+        expect(calculadoraService.multiplicationNumber(valor1, valor2)).toBe(result);
         expect(res.status).toHaveBeenCalledWith(200);
     });
 

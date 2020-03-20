@@ -1,14 +1,14 @@
 class CalculadoraService {
 
-    sumNumber(valor1, valor2) {
+    additionNumber(valor1, valor2) {
         return valor1 + valor2;
     }
 
-    subNumber(valor1, valor2) {
+    subtractionNumber(valor1, valor2) {
         return valor1 - valor2;
     }
 
-    multNumber(valor1, valor2) {
+    multiplicationNumber(valor1, valor2) {
         return valor1 * valor2;
     }
 
