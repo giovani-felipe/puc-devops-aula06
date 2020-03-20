@@ -50,4 +50,15 @@ describe('Teste calculadora service', () => {
 
         expect(calculadoraService.multNumber(valor1, valor2)).toBe(result);
     });
+
+    it('return 200 in method divisionNumber', () => {
+        const valor1 = 100;
+        const valor2 = 10;
+        const result = 10;
+
+        const calculadoraService = new CalculadoraService();
+        calculadoraService.divisionNumber(valor1, valor2);
+
+        expect(calculadoraService.divisionNumber(valor1, valor2)).toBe(result);
+    });
 });

@@ -77,4 +77,24 @@ describe('Teste calculadora controller', () => {
         expect(calculadoraService.multNumber(valor1, valor2)).toBe(result);
         expect(res.status).toHaveBeenCalledWith(200);
     });
+
+    it('return 200 in method divisionNumber', async() => {
+        const valor1 = 100;
+        const valor2 = 10;
+        const result = 10;
+
+        const req = {
+            body: { valor1, valor2 }
+        };
+
+        const calculadoraService = {
+            divisionNumber: jest.fn().mockReturnValue(10)
+        }
+
+        const calculadoraController = new CalculadoraController();
+        calculadoraController.divisionNumber(req, res);
+
+        expect(calculadoraService.divisionNumber(valor1, valor2)).toBe(result);
+        expect(res.status).toHaveBeenCalledWith(200);
+    });
 });
