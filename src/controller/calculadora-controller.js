@@ -2,12 +2,12 @@ const { CalculadoraService } = require('../service');
 
 class CalculadoraController {
 
-    sumNumber(req, res, next) {
+    additionNumber(req, res, next) {
         const { valor1, valor2 } = req.body;
 
         try {
-            const sumNumber = new CalculadoraService();
-            const response = sumNumber.sumNumber(valor1, valor2);
+            const additionNumber = new CalculadoraService();
+            const response = additionNumber.additionNumber(valor1, valor2);
 
             return res.status(200).send({ data: response });
         } catch (e) {
@@ -15,12 +15,12 @@ class CalculadoraController {
         }
     }
 
-    subNumber(req, res, next) {
+    subtractionNumber(req, res, next) {
         const { valor1, valor2 } = req.body;
 
         try {
-            const subNumber = new CalculadoraService();
-            const response = subNumber.subNumber(valor1, valor2);
+            const subtractionNumber = new CalculadoraService();
+            const response = subtractionNumber.subtractionNumber(valor1, valor2);
 
             return res.status(200).send({ data: response });
         } catch (e) {
@@ -28,13 +28,13 @@ class CalculadoraController {
         }
     }
 
-    multNumber(req, res, next) {
+    multiplicationNumber(req, res, next) {
         const { valor1, valor2 } = req.body;
 
         try {
 
-            const multNumber = new CalculadoraService();
-            const response = multNumber.multNumber(valor1, valor2);
+            const multiplicationNumber = new CalculadoraService();
+            const response = multiplicationNumber.multiplicationNumber(valor1, valor2);
 
             return res.status(200).send({ data: response });
         } catch (e) {

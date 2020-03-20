@@ -5,7 +5,7 @@ API para realizar operações matemáticas
 - [:white_check_mark:] Soma de números
 - [:white_check_mark:] Subtração de números
 - [:white_check_mark:] Multiplicação de números
-- [] Divisão de números
+- [:white_check_mark:] Divisão de números
 
 ##Configuração
 > npm install -g nodemon
