@@ -57,4 +57,24 @@ describe('Teste calculadora controller', () => {
         expect(calculadoraService.subNumber(valor1, valor2)).toBe(result);
         expect(res.status).toHaveBeenCalledWith(200);
     });
+
+    it('return 200 in method mult', async() => {
+        const valor1 = 10;
+        const valor2 = 10;
+        const result = 100;
+
+        const req = {
+            body: { valor1, valor2 }
+        };
+
+        const calculadoraService = {
+            multNumber: jest.fn().mockReturnValue(100)
+        }
+
+        const calculadoraController = new CalculadoraController();
+        calculadoraController.multNumber(req, res);
+
+        expect(calculadoraService.multNumber(valor1, valor2)).toBe(result);
+        expect(res.status).toHaveBeenCalledWith(200);
+    });
 });
