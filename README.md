@@ -4,7 +4,7 @@ API para realizar operações matemáticas
 >operações:
 - [:white_check_mark:] Soma de números
 - [:white_check_mark:] Subtração de números
-- [] Multiplicação de números
+- [:white_check_mark:] Multiplicação de números
 - [] Divisão de números
 
 ##Configuração
@@ -13,3 +13,6 @@ API para realizar operações matemáticas
 
 ##Execução
 > yarn start
+
+##Documentação
+>http://localhost:3000/api-docs

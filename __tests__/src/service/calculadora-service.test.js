@@ -39,4 +39,15 @@ describe('Teste calculadora service', () => {
 
         expect(calculadoraService.subNumber(valor1, valor2)).toBe(result);
     });
+
+    it('return 200 in method mult', () => {
+        const valor1 = 10;
+        const valor2 = 10;
+        const result = 100;
+
+        const calculadoraService = new CalculadoraService();
+        calculadoraService.multNumber(valor1, valor2);
+
+        expect(calculadoraService.multNumber(valor1, valor2)).toBe(result);
+    });
 });
