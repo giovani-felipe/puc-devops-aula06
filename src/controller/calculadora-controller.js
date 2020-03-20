@@ -27,6 +27,24 @@ class CalculadoraController {
             return res.status(404).send({ message: e.message });
         }
     }
+
+    divisionNumber(req, res, next) {
+        const { valor1, valor2 } = req.body;
+
+        try {
+
+            if (valor1 < valor2) {
+                return res.status(404).send({ message: 'Dividendo não pode ser menor do que o divisor!' });
+            }
+
+            const divisionNumber = new CalculadoraService();
+            const response = divisionNumber.divisionNumber(valor1, valor2);
+
+            return res.status(200).send({ data: response });
+        } catch (e) {
+            return res.status(404).send({ message: e.message });
+        }
+    }
 }
 
 module.exports = CalculadoraController;

@@ -6,5 +6,6 @@ const calculadoraController = new CalculadoraController();
 
 router.route('/calculadora/sum').post(calculadoraController.sumNumber);
 router.route('/calculadora/sub').post(calculadoraController.subNumber);
+router.route('/calculadora/division').post(calculadoraController.divisionNumber);
 
 module.exports = router;
