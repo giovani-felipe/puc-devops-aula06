@@ -1,0 +1,50 @@
+pool:
+  name: Azure Pipelines
+  vmImage: 'vs2017-win2016'
+  demands:
+    - npm
+    - java
+
+steps:
+  - task: Npm@1
+    displayName: "npm install"
+    inputs:
+      verbose: false
+
+  - task: Npm@1
+    displayName: "npm test"
+    inputs:
+      command: custom
+      verbose: false
+      customCommand: "run test:coverage"
+
+  - task: SonarSource.sonarcloud.14d9cde6-c1da-4d55-aa01-2965cd301255.SonarCloudPrepare@1
+    displayName: "Prepare analysis on SonarCloud"
+    inputs:
+      SonarCloud: "devops-aula06"
+      organization: "puc-minas"
+      scannerMode: CLI
+      configMode: manual
+      cliProjectKey: "devops-aula06"
+      cliProjectName: "devops-aula06"
+      cliSources: src
+      extraProperties: |
+        # Additional properties that will be passed to the scanner, 
+        # Put one key=value per line, example:
+        # sonar.exclusions=**/*.bin
+        sonar.javascript.lcov.reportPaths=coverage/lcov.info
+        sonar.testExecutionReportPaths=coverage/test-reporter.xml
+
+  - task: SonarSource.sonarcloud.ce096e50-6155-4de8-8800-4221aaeed4a1.SonarCloudAnalyze@1
+    displayName: "Run Code Analysis"
+
+  - task: SonarSource.sonarcloud.38b27399-a642-40af-bb7d-9971f69712e8.SonarCloudPublish@1
+    displayName: "Publish Quality Gate Result"
+
+  - task: DeleteFiles@1
+    displayName: "Delete node_modules"
+    inputs:
+      Contents: "node_modules"
+
+  - task: ArchiveFiles@2
+    displayName: Archive
